@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-start_date = '2018-10-10'
+start_date = '2020-9-10'
 end_date = str(datetime.now().strftime('%Y-%m-%d'))
 
 stock = 'TSLA'
@@ -29,8 +29,8 @@ def create_plot(stock_data, ticker):
     plt.subplots(figsize=(12, 8))
     plt.plot(stock_data, label='tikcer')
     plt.xlabel("Date")
-    plt.ylabel("Price, $")
-    plt.title("Ticker: "+ticker)
+    plt.ylabel("Ticker: %s"+ticker)
+    plt.title("Stock Analizer")
     plt.show()
 
 def get_data(ticker):
