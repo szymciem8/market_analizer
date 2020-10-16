@@ -32,20 +32,19 @@ class MyWindow(QMainWindow):
     def clicked(self):
         self.label.setText("You pressed the button")
 
-    def draw_diagram(self):
+    def draw_diagram(self, data_x, data_y):
         self.graphWidget = pg.PlotWidget()
         self.setCentralWidget(self.graphWidget)
 
-        #Dane testowe
-        hour = [i for i in range(10)]
-        temp = [i**2 for i in range(10)]
-
-        self.graphWidget.plot(hour, temp)
+        self.graphWidget.plot(data_x, data_y)
 
 def main():
+    hour = [i for i in range(10, 50, 1)]
+    temp = [x**-2 for x in hour]
+
     app = QApplication(sys.argv)
     win = MyWindow()
-    win.draw_diagram()
+    win.draw_diagram(hour, temp)
     win.show()
     sys.exit(app.exec_())
 
